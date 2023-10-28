@@ -1,0 +1,24 @@
+body
+{
+ 
+}
+
+.heading
+{
+    width: 100%;
+    margin: 0;
+    font-size: 20px;
+    font-family: oswald;
+}
+
+.heading button
+{
+    float: right;
+}
+
+.copy-right-footer
+{
+    width: 100%;
+    background-color: darkgreen;
+    color: white;
+}
