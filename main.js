@@ -1,5 +1,10 @@
 /*created by prashant shukla */
 
+rightWristX = 0;
+rightWristY = 0;
+
+scorerightWrist = 0;
+
 var paddle2 = 10,
   paddle1 = 10;
 
@@ -42,6 +47,13 @@ function draw() {
   background(0.5);
 
   image(video, 0, 0, 700, 600);
+
+  if(scorerightWrist > 0.2)
+  {
+    fill("red")
+    stroke("black")
+    circle(rightWristX, rightWristY, 20)
+  }
 
   fill("black");
   stroke("black");
@@ -86,8 +98,9 @@ function gotPoses(results)
     if(results.length > 0)
     {
         console.log(results);
-        console.log("nose x = " + results[0].pose.nose.x);
-        console.log("nose y = " + results[0].pose.nose.y);
+        rightWristX = results[0].pose.rightWrist.x
+        rightWristY = results[0].pose.rightWrist.y
+        scorerightWrist = results[0].pose.keypoints[10].score
     }
 }
 
